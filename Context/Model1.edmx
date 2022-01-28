@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GesResModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Pwd" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Administatifs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pwd" Type="nvarchar(max)" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+          <Property Name="type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Appel_offre">
+          <Key>
+            <PropertyRef Name="IdOffre" />
+          </Key>
+          <Property Name="IdOffre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="nvarchar(max)" />
+          <Property Name="Heure" Type="nvarchar(max)" />
+          <Property Name="Besoins" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Departements">
+          <Key>
+            <PropertyRef Name="Id_d" />
+          </Key>
+          <Property Name="Id_d" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Enseignants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pwd" Type="nvarchar(max)" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Fournisseurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pwd" Type="nvarchar(max)" />
+          <Property Name="NomSociete" Type="nvarchar(max)" />
+          <Property Name="Lieu" Type="nvarchar(max)" />
+          <Property Name="Adresse" Type="nvarchar(max)" />
+          <Property Name="NomGerant" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Imprimantes">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateLiv" Type="nvarchar(max)" />
+          <Property Name="DureeGarantie" Type="nvarchar(max)" />
+          <Property Name="VitesseImp" Type="nvarchar(max)" />
+          <Property Name="Resolution" Type="nvarchar(max)" />
+          <Property Name="Marque" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Etat" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Laboratoires">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ordinateurs">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateLiv" Type="nvarchar(max)" />
+          <Property Name="DureeGarantie" Type="nvarchar(max)" />
+          <Property Name="Marque" Type="nvarchar(max)" />
+          <Property Name="Cpu" Type="nvarchar(max)" />
+          <Property Name="Ram" Type="nvarchar(max)" />
+          <Property Name="DisqueDur" Type="nvarchar(max)" />
+          <Property Name="Ecran" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Etat" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Pannes">
+          <Key>
+            <PropertyRef Name="IdPanne" />
+          </Key>
+          <Property Name="IdPanne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Date_apparition" Type="nvarchar(max)" />
+          <Property Name="DateApparition" Type="nvarchar(max)" />
+          <Property Name="Explication" Type="nvarchar(max)" />
+          <Property Name="Fréquence" Type="nvarchar(max)" />
+          <Property Name="Ordre" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ResponsableRessources">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pwd" Type="nvarchar(max)" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+          <Property Name="type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ressources">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="DateLiv" Type="nvarchar(max)" />
+          <Property Name="DureeGarantie" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Etat" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ServiceMaintenances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pwd" Type="nvarchar(max)" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+          <Property Name="type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="GesResModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Administatifs" EntityType="Self.Administatifs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Appel_offre" EntityType="Self.Appel_offre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departements" EntityType="Self.Departements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enseignants" EntityType="Self.Enseignants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fournisseurs" EntityType="Self.Fournisseurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imprimantes" EntityType="Self.Imprimantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Laboratoires" EntityType="Self.Laboratoires" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ordinateurs" EntityType="Self.Ordinateurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pannes" EntityType="Self.Pannes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResponsableRessources" EntityType="Self.ResponsableRessources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ressources" EntityType="Self.Ressources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceMaintenances" EntityType="Self.ServiceMaintenances" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GesResModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Administatifs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Appel_offre">
+          <Key>
+            <PropertyRef Name="IdOffre" />
+          </Key>
+          <Property Name="IdOffre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Heure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Besoins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Departements">
+          <Key>
+            <PropertyRef Name="Id_d" />
+          </Key>
+          <Property Name="Id_d" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Enseignants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Fournisseurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NomSociete" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NomGerant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Imprimantes">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateLiv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DureeGarantie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VitesseImp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resolution" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marque" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Etat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Laboratoires">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Ordinateurs">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateLiv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DureeGarantie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marque" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cpu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisqueDur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ecran" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Etat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Pannes">
+          <Key>
+            <PropertyRef Name="IdPanne" />
+          </Key>
+          <Property Name="IdPanne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date_apparition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateApparition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Explication" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fréquence" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ordre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ResponsableRessources">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ressources">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="DateLiv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DureeGarantie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Etat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ServiceMaintenances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GesResEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" />
+          <EntitySet Name="Administatifs" EntityType="Self.Administatifs" />
+          <EntitySet Name="Appel_offre" EntityType="Self.Appel_offre" />
+          <EntitySet Name="Departements" EntityType="Self.Departements" />
+          <EntitySet Name="Enseignants" EntityType="Self.Enseignants" />
+          <EntitySet Name="Fournisseurs" EntityType="Self.Fournisseurs" />
+          <EntitySet Name="Imprimantes" EntityType="Self.Imprimantes" />
+          <EntitySet Name="Laboratoires" EntityType="Self.Laboratoires" />
+          <EntitySet Name="Ordinateurs" EntityType="Self.Ordinateurs" />
+          <EntitySet Name="Pannes" EntityType="Self.Pannes" />
+          <EntitySet Name="ResponsableRessources" EntityType="Self.ResponsableRessources" />
+          <EntitySet Name="Ressources" EntityType="Self.Ressources" />
+          <EntitySet Name="ServiceMaintenances" EntityType="Self.ServiceMaintenances" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GesResModelStoreContainer" CdmEntityContainer="GesResEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="GesResModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="GesResModel.Accounts">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administatifs">
+            <EntityTypeMapping TypeName="GesResModel.Administatifs">
+              <MappingFragment StoreEntitySet="Administatifs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appel_offre">
+            <EntityTypeMapping TypeName="GesResModel.Appel_offre">
+              <MappingFragment StoreEntitySet="Appel_offre">
+                <ScalarProperty Name="IdOffre" ColumnName="IdOffre" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Heure" ColumnName="Heure" />
+                <ScalarProperty Name="Besoins" ColumnName="Besoins" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departements">
+            <EntityTypeMapping TypeName="GesResModel.Departements">
+              <MappingFragment StoreEntitySet="Departements">
+                <ScalarProperty Name="Id_d" ColumnName="Id_d" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enseignants">
+            <EntityTypeMapping TypeName="GesResModel.Enseignants">
+              <MappingFragment StoreEntitySet="Enseignants">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fournisseurs">
+            <EntityTypeMapping TypeName="GesResModel.Fournisseurs">
+              <MappingFragment StoreEntitySet="Fournisseurs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="NomSociete" ColumnName="NomSociete" />
+                <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="NomGerant" ColumnName="NomGerant" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imprimantes">
+            <EntityTypeMapping TypeName="GesResModel.Imprimantes">
+              <MappingFragment StoreEntitySet="Imprimantes">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateLiv" ColumnName="DateLiv" />
+                <ScalarProperty Name="DureeGarantie" ColumnName="DureeGarantie" />
+                <ScalarProperty Name="VitesseImp" ColumnName="VitesseImp" />
+                <ScalarProperty Name="Resolution" ColumnName="Resolution" />
+                <ScalarProperty Name="Marque" ColumnName="Marque" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Etat" ColumnName="Etat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Laboratoires">
+            <EntityTypeMapping TypeName="GesResModel.Laboratoires">
+              <MappingFragment StoreEntitySet="Laboratoires">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ordinateurs">
+            <EntityTypeMapping TypeName="GesResModel.Ordinateurs">
+              <MappingFragment StoreEntitySet="Ordinateurs">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateLiv" ColumnName="DateLiv" />
+                <ScalarProperty Name="DureeGarantie" ColumnName="DureeGarantie" />
+                <ScalarProperty Name="Marque" ColumnName="Marque" />
+                <ScalarProperty Name="Cpu" ColumnName="Cpu" />
+                <ScalarProperty Name="Ram" ColumnName="Ram" />
+                <ScalarProperty Name="DisqueDur" ColumnName="DisqueDur" />
+                <ScalarProperty Name="Ecran" ColumnName="Ecran" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Etat" ColumnName="Etat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pannes">
+            <EntityTypeMapping TypeName="GesResModel.Pannes">
+              <MappingFragment StoreEntitySet="Pannes">
+                <ScalarProperty Name="IdPanne" ColumnName="IdPanne" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date_apparition" ColumnName="Date_apparition" />
+                <ScalarProperty Name="DateApparition" ColumnName="DateApparition" />
+                <ScalarProperty Name="Explication" ColumnName="Explication" />
+                <ScalarProperty Name="Fréquence" ColumnName="Fréquence" />
+                <ScalarProperty Name="Ordre" ColumnName="Ordre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResponsableRessources">
+            <EntityTypeMapping TypeName="GesResModel.ResponsableRessources">
+              <MappingFragment StoreEntitySet="ResponsableRessources">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ressources">
+            <EntityTypeMapping TypeName="GesResModel.Ressources">
+              <MappingFragment StoreEntitySet="Ressources">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateLiv" ColumnName="DateLiv" />
+                <ScalarProperty Name="DureeGarantie" ColumnName="DureeGarantie" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Etat" ColumnName="Etat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceMaintenances">
+            <EntityTypeMapping TypeName="GesResModel.ServiceMaintenances">
+              <MappingFragment StoreEntitySet="ServiceMaintenances">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

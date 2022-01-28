@@ -1,0 +1,190 @@
+﻿@model IEnumerable<Ressource>
+
+@{
+    ViewBag.Title = "ResRessource";
+    Layout = "~/Views/ResRessource/_LayoutPage2.cshtml";
+}
+
+<h1>Gestion Ordinateur</h1>
+
+<input onclick="location.href='@Url.Action("Create", "ResRessource")'" type="button" name="button"class="button2" value="Ajouter un Ordinateur" />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLiv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DureeGarantie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Etat)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateLiv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DureeGarantie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etat)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { code = item.Code }) |
+                @Html.ActionLink("Delete", "Delete", new { code = item.Code })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<section id="container">
+    <!--header start-->
+    <header class="header fixed-top clearfix">
+        <!--logo start-->
+        <div class="brand">
+            <img src="~/Images/Capture2-removebg-preview.png" alt="Alternate text" class="hdr">
+
+        </div>
+        <!--logo end-->
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div class="side-bar">
+            <!-- sidebar menu start-->
+            <div class="menu">
+                <div class="item"> <a href=""> <i class="fa fa-dashboard"></i>Dashboard</a></div>
+
+
+
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-database"></i>Ressources <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-user-alt"></i>Fourniseurs <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-user-alt"></i>Responsable Ressources <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-user-alt"></i>Chef Département <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-user-alt"></i>Administratives <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-user-alt"></i>Enseignants <i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a class="sub-btn"> <i class="fas fa-envelope"></i>Mail<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                        <a href="#" class="sub-item">
+                            <input onclick="location.href='@Url.Action("AjouterRess", "ResRessource")'" type="button" name="button" class="button1" value="+Gestion Ordinateur" style="background-color:transparent;color:white; border:none;" />
+                        </a>
+                    </div>
+                </div>
+                <div class="item"> <a href=""> <i class="fas fa-exclamation-circle"></i>Pannes</a></div>
+                <div class="item"> <a href=""> <i class="fas fa-calendar-check"></i>Appel d'Offres</a></div>
+            </div>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+
+
+
+    <!--sidebar end-->
+    <!--main content start-->
+    <!--main content end-->
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.sub-btn').click(function () {
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+        });
+    });
+
+</script>
+
+

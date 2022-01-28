@@ -1,0 +1,230 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../Images/university-6699377_1920.jpg');
+    background-size: 1366px 657px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    position: absolute;
+    top: 11%;
+    left: 18%;
+    transform: translate(-100%, -50%);
+    width: 220px;
+    cursor: pointer;
+}
+
+.logo2 {
+    position: absolute;
+    top: 59%;
+    left: 47%;
+    transform: translate(-100%, -50%);
+    width: 300px;
+    /* cursor: pointer; */
+    /* color: snow; */
+    background-color: rgba(255,255,255,20.3);
+    border-radius: 43%;
+}
+
+
+
+.loginBox {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 370px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2%;
+}
+
+h1 {
+    position: absolute;
+    top: 10%;
+    left: 46%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 47%;
+    font-size: 48px;
+    color: #581845
+}
+
+.form-content {
+    width: 0%;
+    margin: 0 auto;
+    padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    box-sizing: border-box;
+    top: calc(85px);
+    left: calc(640px);
+    position: absolute;
+}
+
+.form-info {
+    margin-bottom: 19px;
+    padding: 10px;
+}
+
+    .form-info h2 {
+        font-size: 38px;
+        font-weight: 600;
+        padding: 27px 0px;
+        color: #E0E7E7;
+        letter-spacing: 3px;
+        padding-bottom: 10px;
+    }
+
+label {
+    width: 19%;
+    height: 3px;
+    display: block;
+    background-color: #CCD7D7;
+}
+
+.Temail {
+    padding: 17px 7px;
+    position: relative;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0 17px;
+    position: relative;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid;
+    width: 80%;
+}
+
+.email {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.Temail::after {
+    content: '';
+    height: 4px;
+    width: 0;
+    background: #581845;
+    position: absolute;
+    left: 0;
+    top: 59px;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.Temail:hover::after {
+    width: 100%;
+}
+
+
+.pass-w3l {
+    padding: 17px 7px;
+    position: relative;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0 17px;
+    position: relative;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid;
+    width: 80%;
+}
+
+.pass {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.pass-w3l::after {
+    content: '';
+    height: 4px;
+    width: 0;
+    background: #581845;
+    position: absolute;
+    left: 0;
+    top: 59px;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.pass-w3l:hover::after {
+    width: 100%;
+}
+
+input[placeholder] {
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: initial;
+}
+
+input::placeholder {
+    color: black;
+}
+
+span.i1 {
+    position: absolute;
+    top: 28px;
+    left: 12px;
+}
+
+    span.i1 i, span.i2 i {
+        color: #A2CCC7;
+    }
+
+span.i2 {
+    position: absolute;
+    top: 28px;
+    left: 15px;
+}
+
+.submit-agileits {
+    padding: 28px 10px;
+}
+
+    .submit-agileits .login {
+        border-radius: 8%;
+        font-size: 17px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background-color: #e1e6e7;
+        color: #581845;
+        border: none;
+        width: 100%;
+        padding: 16px;
+        outline: none;
+        cursor: pointer;
+        -webkit-transition: 0.5s all;
+    }
+
+    .submit-agileits .login:hover {
+        background-color: #581845;
+        color:white;
+    }
